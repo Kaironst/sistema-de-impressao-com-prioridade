@@ -8,10 +8,10 @@ ADMINISTRACAO=3,
 DIRECAO=3
 } tipoUsuario;
 
+//TODO alterar a estrutura e função usuario para cumprir os requisitos marcados pelo professor
 typedef struct NO_USUARIO {
     char* nome;
     int cpf;
-    int numEmprestimos;
     tipoUsuario tipoUsuario;
     struct NO_USUARIO* proximo;
     struct NO_USUARIO* anterior;
