@@ -1,5 +1,5 @@
-#ifndef LISTA_USUARIOS
-#define LISTA_USUARIOS
+#ifndef LISTA_USUARIOS_H
+#define LISTA_USUARIOS_H
 
 typedef enum {
 ESTUDANTE=1,
@@ -8,7 +8,6 @@ ADMINISTRACAO=3,
 DIRECAO=3
 } tipoUsuario;
 
-//TODO alterar a estrutura e função usuario para cumprir os requisitos marcados pelo professor
 typedef struct NO_USUARIO {
     char* nome;
     int cpf;
