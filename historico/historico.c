@@ -46,3 +46,15 @@ void printHistorico(NoHistorico* primeiro) {
         aux=aux->proximo;
     }
 }
+
+// Autor: Bruno Kussen
+void freeHistorico(NoHistorico* primeiro) {
+    NoHistorico* atual = primeiro->proximo;
+    while (atual != NULL) {
+        NoHistorico* temp = atual;
+        atual = atual->proximo;
+        free(temp->impressao);
+        free(temp);
+    }
+    free(primeiro);
+}

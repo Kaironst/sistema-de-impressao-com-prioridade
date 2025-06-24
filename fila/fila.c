@@ -85,3 +85,15 @@ void printFila(NoFila* primeiro, NoFila* ultimo) {
         aux=aux->proximo;
     }
 }
+
+// Autor: Bruno Kussen
+void freeFila(NoFila* primeiro) {
+    NoFila* atual = primeiro->proximo;
+    while (atual != NULL) {
+        NoFila* temp = atual;
+        atual = atual->proximo;
+        free(temp->impressao);
+        free(temp);
+    }
+    free(primeiro);
+}

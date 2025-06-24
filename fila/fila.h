@@ -13,7 +13,7 @@ Impressao* dequeFila(NoFila* primeiro, NoFila* Ultimo);        //retorna a impre
 Impressao* peekFila(NoFila* primeiro, NoFila* Ultimo);     //retorna a impressão da frente da fila
 Impressao* buscaFila(NoFila* primeiro, NoFila* Ultimo, Impressao* impressao);
 void printFila(NoFila* primeiro, NoFila* ultimo);
-
+void freeFila(NoFila* primeiro);
 
 
 
