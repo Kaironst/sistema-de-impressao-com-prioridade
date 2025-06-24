@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <string.h>
 
+// Autor: Pedro Novak Wosch
 NoUsuario* iniListaUsuario() {
     NoUsuario* header=(NoUsuario*)malloc(sizeof(NoUsuario));
     header->nome="";
@@ -13,6 +14,7 @@ NoUsuario* iniListaUsuario() {
     return header;
 }
 
+// Autor: Pedro Novak Wosch
 int addUsuario(NoUsuario* header, char* nome, int cpf, tipoUsuario tipoUsuario) {
     NoUsuario* novo=(NoUsuario*)malloc(sizeof(NoUsuario));
     novo->nome=nome;
@@ -25,6 +27,7 @@ int addUsuario(NoUsuario* header, char* nome, int cpf, tipoUsuario tipoUsuario) 
     return 1;
 }
 
+// Autor: Pedro Novak Wosch
 int rmUsuario(NoUsuario* no) {
     if (no==NULL || no->anterior==NULL) return 0;     // nó não encontrado
     free(no->nome);
@@ -35,6 +38,7 @@ int rmUsuario(NoUsuario* no) {
     return 1;
 }
 
+// Autor: Pedro Novak Wosch
 NoUsuario* getUsuario(NoUsuario* header, char* nome) {
     NoUsuario* atual=header->proximo;
     while( atual!=NULL && strcmp(atual->nome,nome)!=0 ) {
@@ -43,6 +47,7 @@ NoUsuario* getUsuario(NoUsuario* header, char* nome) {
     return atual;
 }
 
+// Autor: Pedro Novak Wosch
 NoUsuario* getUsuarioCpf(NoUsuario* header, int cpf) {
     NoUsuario* atual=header->proximo;
     while(atual!=NULL && atual->cpf!=cpf) {
@@ -51,6 +56,7 @@ NoUsuario* getUsuarioCpf(NoUsuario* header, int cpf) {
     return atual;
 }
 
+// Autor: Pedro Novak Wosch
 int freeListaUsuario(NoUsuario* header) {
     while(rmUsuario(header->proximo));
     free(header);

@@ -12,5 +12,6 @@ int pushHistorico(NoHistorico* primeiro, Impressao* impressao);
 Impressao* popHistorico(NoHistorico* primeiro);
 Impressao* peek(NoHistorico* primeiro);
 void printHistorico(NoHistorico* primeiro);
+void freeHistorico(NoHistorico* primeiro);
 
 #endif
