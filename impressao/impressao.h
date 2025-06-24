@@ -1,14 +1,21 @@
-#include "../usuarios/usuarios.h"
 #ifndef IMPRESSAO_H
 #define IMPRESSAO_H
 
-typedef struct IMPRESSAO {
-int numPaginas;
-NoUsuario* usuario;
-}Impressao;
+#include "../usuarios/usuarios.h"
 
-Impressao* criarImpressao(NoUsuario* usuario, int numPaginas); //cria uma nova impressao e aloca memoria
-int colocarEmFila(Impressao* impressao, NoFila* primeiro, NoFila* ultimo); //coloca a impressão dentro da fila
-int realizarImpressao(NoHistorico* historico, NoFila* primeiro, NoFila* ultimo); //realiza o deque e faz push no historico
-Impressao* retirarDoHistorico(NoHistorico* historico); //realiza o pop retirando a impressao do historico
+//structs externas
+typedef struct NO_FILA NoFila;
+typedef struct NOHISTORICO NoHistorico;
+
+typedef struct IMPRESSAO {
+    int numPaginas;
+    NoUsuario* usuario;
+} Impressao;
+
+
+Impressao* criarImpressao(NoUsuario* usuario, int numPaginas);
+int colocarEmFila(Impressao* impressao, NoFila* primeiro, NoFila* ultimo);
+int realizarImpressao(NoHistorico* historico, NoFila* primeiro, NoFila* ultimo);
+Impressao* retirarDoHistorico(NoHistorico* historico);
+
 #endif
