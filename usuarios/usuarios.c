@@ -17,7 +17,7 @@ NoUsuario* iniListaUsuario() {
 // Autor: Pedro Novak Wosch
 int addUsuario(NoUsuario* header, char* nome, int cpf, tipoUsuario tipoUsuario) {
     NoUsuario* novo=(NoUsuario*)malloc(sizeof(NoUsuario));
-    novo->nome=nome;
+    strcpy(novo->nome,nome);
     novo->cpf=cpf;
     novo->tipoUsuario=tipoUsuario;
     novo->proximo=header->proximo;
