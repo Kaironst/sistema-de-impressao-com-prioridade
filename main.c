@@ -5,15 +5,14 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "../usuarios/usuarios.h"
-#include "../impressao/impressao.h"
-#include "../fila/fila.h"
-#include "../historico/historico.h"
+#include "usuarios/usuarios.h"
+#include "impressao/impressao.h"
+#include "fila/fila.h"
+#include "historico/historico.h"
 
 int main() {
     NoUsuario* listaUsuarios = iniListaUsuario();
-    NoFila* primeiroFila = iniNoFila();
-    NoFila* ultimoFila = iniNoFila();
+    FilaImpressao* filaImpressao  = iniFila();
     NoHistorico* historico = iniNoHistorico();
 
     int opcao;
@@ -34,6 +33,7 @@ int main() {
                 int cpf, tipo;
 
                 printf("Nome: ");
+                scanf("%c", (char *) stdin); //flush no input buffer
                 fgets(nome, 100, stdin);
                 nome[strcspn(nome, "\n")] = '\0';
 
@@ -67,18 +67,18 @@ int main() {
                 scanf("%d", &paginas);
 
                 Impressao* nova = criarImpressao(usuario, paginas);
-                colocarEmFila(nova, primeiroFila, ultimoFila);
+                colocarEmFila(nova, filaImpressao);
                 printf("Solicitação adicionada à fila.\n");
                 break;
             }
 
             case 3: { //executar impressao
-                realizarImpressao(historico, primeiroFila, ultimoFila);
+                realizarImpressao(historico, filaImpressao);
                 break;
             }
                 
             case 4: { //mostrar fila de espera
-                printFila(primeiroFila, ultimoFila);
+                printFila(filaImpressao);
                 break;
             }
                 
@@ -101,8 +101,7 @@ int main() {
     } while (opcao != 6);
 
     freeListaUsuario(listaUsuarios);
-    freeFila(primeiroFila);
-    freeFila(ultimoFila);
+    freeFila(filaImpressao);
     freeHistorico(historico);
     
     return 0;

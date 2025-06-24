@@ -2,6 +2,7 @@
 #define IMPRESSAO_H
 
 #include "../usuarios/usuarios.h"
+#include "../fila/fila.h"
 
 //structs externas
 typedef struct NO_FILA NoFila;
@@ -14,8 +15,8 @@ typedef struct IMPRESSAO {
 
 
 Impressao* criarImpressao(NoUsuario* usuario, int numPaginas);
-int colocarEmFila(Impressao* impressao, NoFila* primeiro, NoFila* ultimo);
-int realizarImpressao(NoHistorico* historico, NoFila* primeiro, NoFila* ultimo);
+int colocarEmFila(Impressao* impressao, FilaImpressao* fila);
+int realizarImpressao(NoHistorico* historico, FilaImpressao* fila);
 Impressao* retirarDoHistorico(NoHistorico* historico);
 
 #endif

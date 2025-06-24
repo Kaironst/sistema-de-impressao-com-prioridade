@@ -16,14 +16,14 @@ Impressao* criarImpressao(NoUsuario* usuario, int numPaginas) {
 
 // Autor: Bruno Kussen
 // Coloca a impressão na fila
-int colocarEmFila(Impressao* impressao, NoFila* primeiro, NoFila* ultimo) {
-    return enqueFila(primeiro, ultimo, impressao);
+int colocarEmFila(Impressao* impressao, FilaImpressao* fila) {
+    return enqueFila(fila, impressao);
 }
 
 // Autor: Bruno Kussen
 // Remove da fila e adiciona no histórico
-int realizarImpressao(NoHistorico* historico, NoFila* primeiro, NoFila* ultimo) {
-    Impressao* impressao = dequeFila(primeiro, ultimo);
+int realizarImpressao(NoHistorico* historico, FilaImpressao* fila) {
+    Impressao* impressao = dequeFila(fila);
     if (!impressao) {
         printf("\nErro: Fila vazia.\n");
         return 0;

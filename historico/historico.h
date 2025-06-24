@@ -5,13 +5,13 @@
 typedef struct NOHISTORICO  {
     Impressao* impressao;
     struct NOHISTORICO *proximo;
-} NoHistorico;
+} NoHistorico; //pilha linkada (primeiro nó é cabeçalho)
 
 NoHistorico* iniNoHistorico();
-int pushHistorico(NoHistorico* primeiro, Impressao* impressao);
-Impressao* popHistorico(NoHistorico* primeiro);
-Impressao* peek(NoHistorico* primeiro);
-void printHistorico(NoHistorico* primeiro);
-void freeHistorico(NoHistorico* primeiro);
+int pushHistorico(NoHistorico* header, Impressao* impressao);
+Impressao* popHistorico(NoHistorico* header);
+Impressao* peek(NoHistorico* header);
+void printHistorico(NoHistorico* header);
+void freeHistorico(NoHistorico* header);
 
 #endif
