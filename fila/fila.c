@@ -3,11 +3,13 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+// Autor: Pedro Novak Wosch
 NoFila* iniNoFila() { //retorna NULL ao NoFila;
 return NULL;
 }
 
-int enqueFila(NoFila* primeiro, NoFila* ultimo, Impressao* impressao) {//coloca usuário na fila tomando conta para respeitar a prioridade
+// Autor: Pedro Novak Wosch
+int enqueFila(NoFila* primeiro, NoFila* ultimo, Impressao* impressao) { //coloca usuário na fila tomando conta para respeitar a prioridade
     NoFila* novo = (NoFila*)malloc(sizeof(NoFila));
     novo->impressao=impressao;
 
@@ -49,7 +51,8 @@ int enqueFila(NoFila* primeiro, NoFila* ultimo, Impressao* impressao) {//coloca 
 
 }
 
-Impressao* dequeFila(NoFila* primeiro, NoFila* Ultimo) {    //retorna a impressão da frente da fila e remove ela
+// Autor: Pedro Novak Wosch
+Impressao* dequeFila(NoFila* primeiro, NoFila* Ultimo) { // retorna a impressão da frente da fila e remove ela
     NoFila* aux = primeiro;
     primeiro = primeiro->proximo;
     primeiro->anterior = NULL;
@@ -58,11 +61,13 @@ Impressao* dequeFila(NoFila* primeiro, NoFila* Ultimo) {    //retorna a impress�
     aux = NULL; 
     return impressao;
 }
-    
-Impressao* peekFila(NoFila* primeiro, NoFila* Ultimo) {    //retorna a impressão da frente da fila
+
+// Autor: Pedro Novak Wosch
+Impressao* peekFila(NoFila* primeiro, NoFila* Ultimo) { //retorna a impressão da frente da fila
     return primeiro->impressao;
 }
 
+// Autor: Pedro Novak Wosch
 Impressao* buscaFila(NoFila* primeiro, NoFila* Ultimo, Impressao* impressao) {
     NoFila* aux = primeiro;
     while(aux!=NULL && aux->impressao!=impressao) {
@@ -71,6 +76,7 @@ Impressao* buscaFila(NoFila* primeiro, NoFila* Ultimo, Impressao* impressao) {
     return aux->impressao;
 }
 
+// Autor: Pedro Novak Wosch
 void printFila(NoFila* primeiro, NoFila* ultimo) {
     printf("proximo --> ");
     NoFila* aux = primeiro;

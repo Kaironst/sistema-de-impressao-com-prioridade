@@ -3,10 +3,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+// Autor: Pedro Novak Wosch
 NoHistorico* iniNoHistorico() {
     return NULL;
 }
 
+// Autor: Pedro Novak Wosch
 int pushHistorico(NoHistorico* primeiro, Impressao* impressao) {
     NoHistorico* novo = (NoHistorico*)malloc(sizeof(NoHistorico));
     novo->impressao=impressao;
@@ -19,6 +21,7 @@ int pushHistorico(NoHistorico* primeiro, Impressao* impressao) {
     primeiro=novo;
 }
 
+// Autor: Pedro Novak Wosch
 Impressao* popHistorico(NoHistorico* primeiro) {
     if (primeiro==NULL) return NULL;
 
@@ -29,10 +32,12 @@ Impressao* popHistorico(NoHistorico* primeiro) {
     return impressao;
 }
 
+// Autor: Pedro Novak Wosch
 Impressao* peek(NoHistorico* primeiro) {
     return primeiro->impressao;
 }
 
+// Autor: Pedro Novak Wosch
 void printHistorico(NoHistorico* primeiro) {
     NoHistorico* aux = primeiro;
     printf("proximo -->");
