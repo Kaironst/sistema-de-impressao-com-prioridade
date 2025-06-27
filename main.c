@@ -87,22 +87,78 @@ int main() {
                 break;
             }
                 
-            case 6: { //sair
+            case 6: {
+                int totalEstudante = 0, totalProfessor = 0, totalAdmin = 0;
+                int paginasEstudante = 0, paginasProfessor = 0, paginasAdmin = 0;
+                int countEstudante = 0, countProfessor = 0, countAdmin = 0;
+
+                NoHistorico* atual = historico->proximo;
+                while (atual != NULL) {
+                    Impressao* imp = atual->impressao;
+                    if (imp && imp->usuario) {
+                        switch (imp->usuario->tipoUsuario) {
+                            case ESTUDANTE:
+                                totalEstudante++;
+                                paginasEstudante += imp->numPaginas;
+                                countEstudante++;
+                                break;
+                            case PROFESSOR:
+                                totalProfessor++;
+                                paginasProfessor += imp->numPaginas;
+                                countProfessor++;
+                                break;
+                            case ADMINISTRACAO:
+                                totalAdmin++;
+                                paginasAdmin += imp->numPaginas;
+                                countAdmin++;
+                                break;
+                        }
+                    }
+                    atual = atual->proximo;
+                }
+
+                printf("\n--- Estatísticas ---\n");
+                printf("Total de impressões:\n");
+                printf("Estudantes: %d\n", totalEstudante);
+                printf("Professores: %d\n", totalProfessor);
+                printf("Administração/Direção: %d\n", totalAdmin);
+
+                printf("\nNúmero total de páginas:\n");
+                printf("Estudantes: %d\n", paginasEstudante);
+                printf("Professores: %d\n", paginasProfessor);
+                printf("Administração/Direção: %d\n", paginasAdmin);
+
+                printf("\nTempo médio estimado por prioridade (supondo 5s por página):\n");
+                if (countEstudante > 0)
+                    printf("Estudantes: %.2f s\n", (paginasEstudante * 5.0) / countEstudante);
+                else
+                    printf("Estudantes: N/A\n");
+                if (countProfessor > 0)
+                    printf("Professores: %.2f s\n", (paginasProfessor * 5.0) / countProfessor);
+                else
+                    printf("Professores: N/A\n");
+                if (countAdmin > 0)
+                    printf("Administração/Direção: %.2f s\n", (paginasAdmin * 5.0) / countAdmin);
+                else
+                    printf("Administração/Direção: N/A\n");
+
+                break;
+            }
+
+            case 7:
                 printf("Encerrando o sistema...\n");
                 break;
-            }
-                
-            default: { //opcao invalida
-                printf("Opcao invalida. Tente novamente.\n");
+
+            default:
+                printf("Opção inválida. Tente novamente.\n");
                 break;
-            }
         }
 
-    } while (opcao != 6);
+    } while (opcao != 7);
 
     freeListaUsuario(listaUsuarios);
     freeFila(filaImpressao);
     freeHistorico(historico);
-    
+
     return 0;
 }
