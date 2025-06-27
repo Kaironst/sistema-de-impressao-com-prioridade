@@ -28,7 +28,7 @@ int realizarImpressao(NoHistorico* historico, FilaImpressao* fila) {
         printf("\nErro: Fila vazia.\n");
         return 0;
     }
-    printf("\nImprimindo %d páginas para %s (CPF: %d).\n", impressao->numPaginas, impressao->usuario->nome, impressao->usuario->cpf);
+    printf("\nImprimindo %d paginas para %s (CPF: %d).\n", impressao->numPaginas, impressao->usuario->nome, impressao->usuario->cpf);
     pushHistorico(historico, impressao);
     return 1;
 }

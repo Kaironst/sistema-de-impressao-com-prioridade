@@ -18,13 +18,13 @@ int main() {
     int opcao;
     do {
         printf("\n--- MENU SISTEMA DE IMPRESSAO ---\n");
-        printf("1. Cadastrar usuário\n");
-        printf("2. Cadastrar solicitação de impressão\n");
-        printf("3. Executar impressão\n");
+        printf("1. Cadastrar usuario\n");
+        printf("2. Cadastrar solicitacao de impressao\n");
+        printf("3. Executar impressao\n");
         printf("4. Mostrar fila de espera\n");
-        printf("5. Mostrar histórico de impressões\n");
+        printf("5. Mostrar historico de impressoes\n");
         printf("6. Sair\n");
-        printf("Escolha uma opção: ");
+        printf("Escolha uma opcao: ");
         scanf("%d", &opcao);
 
         switch (opcao) {
@@ -40,35 +40,35 @@ int main() {
                 printf("CPF: ");
                 scanf("%d", &cpf);
 
-                printf("Tipo (1=Estudante, 2=Professor, 3=Administração/Direção): ");
+                printf("Tipo (1=Estudante, 2=Professor, 3=Administracao/Direcao): ");
                 scanf("%d", &tipo);
                 getchar();
 
                 if (addUsuario(listaUsuarios, nome, cpf, (tipoUsuario)tipo))
-                    printf("Usuário adicionado com sucesso.\n");
+                    printf("Usuario adicionado com sucesso.\n");
                 else
-                    printf("Erro ao adicionar usuário.\n");
+                    printf("Erro ao adicionar usuario.\n");
                 break;
             }
 
             case 2: {   //cadastrar solicitacao de impressao
                 int cpf, paginas;
-                printf("CPF do usuário: ");
+                printf("CPF do usuario: ");
                 scanf("%d", &cpf);
                 getchar();
 
                 NoUsuario* usuario = getUsuarioCpf(listaUsuarios, cpf);
                 if (!usuario) {
-                    printf("Usuário não encontrado.\n");
+                    printf("Usuario nao encontrado.\n");
                     break;
                 }
 
-                printf("Número de páginas: ");
+                printf("Numero de paginas: ");
                 scanf("%d", &paginas);
 
                 Impressao* nova = criarImpressao(usuario, paginas);
                 colocarEmFila(nova, filaImpressao);
-                printf("Solicitação adicionada à fila.\n");
+                printf("Solicitacao adicionada a fila.\n");
                 break;
             }
 
@@ -93,7 +93,7 @@ int main() {
             }
                 
             default: { //opcao invalida
-                printf("Opção inválida. Tente novamente.\n");
+                printf("Opcao invalida. Tente novamente.\n");
                 break;
             }
         }
