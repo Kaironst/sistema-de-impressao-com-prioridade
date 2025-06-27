@@ -23,7 +23,8 @@ int main() {
         printf("3. Executar impressao\n");
         printf("4. Mostrar fila de espera\n");
         printf("5. Mostrar historico de impressoes\n");
-        printf("6. Sair\n");
+        printf("6. Estatisticas\n");
+        printf("7. Sair\n");
         printf("Escolha uma opcao: ");
         scanf("%d", &opcao);
 
@@ -117,18 +118,18 @@ int main() {
                     atual = atual->proximo;
                 }
 
-                printf("\n--- Estatísticas ---\n");
-                printf("Total de impressões:\n");
+                printf("\n--- Estatisticas ---\n");
+                printf("Total de impressoes:\n");
                 printf("Estudantes: %d\n", totalEstudante);
                 printf("Professores: %d\n", totalProfessor);
-                printf("Administração/Direção: %d\n", totalAdmin);
+                printf("Administracao/Direcao: %d\n", totalAdmin);
 
-                printf("\nNúmero total de páginas:\n");
+                printf("\nNumero total de paginas:\n");
                 printf("Estudantes: %d\n", paginasEstudante);
                 printf("Professores: %d\n", paginasProfessor);
-                printf("Administração/Direção: %d\n", paginasAdmin);
+                printf("Administracao/Direcao: %d\n", paginasAdmin);
 
-                printf("\nTempo médio estimado por prioridade (supondo 5s por página):\n");
+                printf("\nTempo medio estimado por prioridade (supondo 5s por pagina):\n");
                 if (countEstudante > 0)
                     printf("Estudantes: %.2f s\n", (paginasEstudante * 5.0) / countEstudante);
                 else
@@ -138,9 +139,9 @@ int main() {
                 else
                     printf("Professores: N/A\n");
                 if (countAdmin > 0)
-                    printf("Administração/Direção: %.2f s\n", (paginasAdmin * 5.0) / countAdmin);
+                    printf("Administracao/Direcao: %.2f s\n", (paginasAdmin * 5.0) / countAdmin);
                 else
-                    printf("Administração/Direção: N/A\n");
+                    printf("Administracao/Direcao: N/A\n");
 
                 break;
             }
@@ -150,7 +151,7 @@ int main() {
                 break;
 
             default:
-                printf("Opção inválida. Tente novamente.\n");
+                printf("Opcao inválida. Tente novamente.\n");
                 break;
         }
 
