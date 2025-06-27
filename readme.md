@@ -1,5 +1,7 @@
 # Introdução
 
+Link  Youtube: https://github.com/Kaironst/sistema-de-impressao-com-prioridade
+
 Este é um trabalho realizado por Pedro Novak Wosch e Bruno Kussen, referente à disciplina de Estrutura de Dados da UFPR, dirigido pelo professor Helcio Soares Padilha Junior.
 
 Aqui foi realizado a implementação de um sistema de impressão com prioridades dentro de laboratório de informática que compartilha uma impressora entre diversos usuários.
