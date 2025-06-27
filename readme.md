@@ -1,6 +1,6 @@
 # Introdução
 
-Link  Youtube: https://github.com/Kaironst/sistema-de-impressao-com-prioridade
+Link  Youtube: https://www.youtube.com/watch?v=kq78g2GPxeQ
 
 Este é um trabalho realizado por Pedro Novak Wosch e Bruno Kussen, referente à disciplina de Estrutura de Dados da UFPR, dirigido pelo professor Helcio Soares Padilha Junior.
 
